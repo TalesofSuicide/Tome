@@ -48,17 +48,6 @@ logging.getLogger("websocket").setLevel(logging.ERROR)
 
 logger = logging.getLogger(__name__)
 
-# Define the Streamer class with the __repr__ method here
-class Streamer:
-    def __init__(self, username, channel_id=None, channel_points=0.0):
-        self.username = username
-        self.channel_id = channel_id
-        self.channel_points = channel_points
-        self.is_online = False  # Assuming this attribute determines the online status
-
-    def __repr__(self):
-        status = "Online" if self.is_online else "Offline"
-        return f"Tomoe is watching {self.username} and has found that {self.username} has the id of {self.channel_id} and you have acquired {_millify(self.channel_points)} channel points. The current status of {self.username} is {status}!"
 
 class TwitchChannelPointsMiner:
     __slots__ = [
